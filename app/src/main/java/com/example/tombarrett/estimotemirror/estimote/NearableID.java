@@ -1,0 +1,47 @@
+package com.example.tombarrett.estimotemirror.estimote;
+
+/**
+ * Created by tombarrett on 28/07/2017.
+ * Class to store information about a nearable/sticker
+ */
+
+public class NearableID {
+
+    private String nearableIDString;
+
+    public NearableID(String nearableIDString) {
+        this.nearableIDString = nearableIDString;
+    }
+
+    public String toString() {
+        return nearableIDString;
+    }
+
+    public String getNearableIDString() {
+        return nearableIDString;
+    }
+
+    @Override
+    public int hashCode() {
+        return toString().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) {
+            return false;
+        }
+
+        if (o == this) {
+            return true;
+        }
+
+        if (getClass() != o.getClass()) {
+            return super.equals(o);
+        }
+
+        NearableID other = (NearableID) o;
+
+        return getNearableIDString().equals(other.getNearableIDString());
+    }
+}
